@@ -18,7 +18,7 @@ var buttonColours = ["red", "blue", "green", "yellow"];
    var clickedButtonAtrr = $(this).attr("id");
     userClickedPattern.push(clickedButtonAtrr);
     playSound(clickedButtonAtrr);
-       
+    animatePress(clickedButtonAtrr);   
     
 });
 
@@ -49,7 +49,19 @@ function playSound(name) {
   audio.play();
 }
 
-
+function animatePress(currentColour){
+    //css pressed class
+    
+    var time = 100;
+    
+    $("#"+currentColour).addClass("pressed");
+    setTimeout(function(){
+        $("#"+currentColour).removeClass("pressed");
+    
+    }, time);
+    
+    
+}
 
 
 
